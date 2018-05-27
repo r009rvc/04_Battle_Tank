@@ -11,4 +11,4 @@ Lecture List
 
 * BT01 Intro, Notes & Assets
 * BT02 Game Design Documents (GDD)
-
+* BT03 Setting up a GitHub "Repo"
