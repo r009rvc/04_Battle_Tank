@@ -3,6 +3,7 @@
 #include "BattleTanks.h"
 #include "TankPlayerController_Cpp.h"
 
+
 void ATankPlayerController_Cpp::BeginPlay()
 {
 	Super::BeginPlay();
@@ -18,8 +19,22 @@ void ATankPlayerController_Cpp::BeginPlay()
 	}
 }
 
+void ATankPlayerController_Cpp::Tick(float DeltaTime)
+{
+	Super::Tick(DeltaTime);
+	AimTowardsCrosshair();
+
+}
+
+
 ATank* ATankPlayerController_Cpp::GetControlledTank() const
 {
 	return Cast<ATank>(GetPawn());
+
+}
+
+void ATankPlayerController_Cpp::AimTowardsCrosshair()
+{
+	if (!GetControlledTank()) { return;}
 
 }
