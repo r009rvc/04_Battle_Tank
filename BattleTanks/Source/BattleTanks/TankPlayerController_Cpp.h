@@ -13,12 +13,12 @@ class BATTLETANKS_API ATankPlayerController_Cpp : public APlayerController
 {
 	GENERATED_BODY()
 	
-		public:
+		private:
 			ATank* GetControlledTank() const;
 	
-		virtual	void BeginPlay() override;
+		virtual	void BeginPlay() override;// Should stay Pubic: But we don't Derive From them here, so it doesn't matter.
 
-		virtual	void Tick(float DeltaTime) override;
+		virtual	void Tick(float DeltaTime) override;// Should stay Pubic: But we don't Derive From them here, so it doesn't matter.
 		
 		//Start the tank moving the barrel so that a shot would hit where
 		//the crosshair intersects the world
@@ -27,7 +27,10 @@ class BATTLETANKS_API ATankPlayerController_Cpp : public APlayerController
 	// Return an OUT parameter, true if hit landscape 
 	bool GetSightRayHitLocation(FVector& OutHitLocation) const;
 
-
+	UPROPERTY(EditAnywhere)
+	float CrosshairXLocation = 0.5;
+	UPROPERTY(EditAnywhere)
+	float CrosshairYLocation = 0.3333;
 
 };
 
