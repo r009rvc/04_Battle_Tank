@@ -13,16 +13,17 @@ class BATTLETANKS_API ATankPlayerController_Cpp : public APlayerController
 {
 	GENERATED_BODY()
 	
-		private:
-			ATank* GetControlledTank() const;
-	
-		virtual	void BeginPlay() override;// Should stay Pubic: But we don't Derive From them here, so it doesn't matter.
+private:
 
-		virtual	void Tick(float DeltaTime) override;// Should stay Pubic: But we don't Derive From them here, so it doesn't matter.
+	ATank* GetControlledTank() const;
+	
+	virtual	void BeginPlay() override;// Should stay Pubic: But we don't Derive From them here, so it doesn't matter.
+
+	virtual	void Tick(float DeltaTime) override;// Should stay Pubic: But we don't Derive From them here, so it doesn't matter.
 		
-		//Start the tank moving the barrel so that a shot would hit where
-		//the crosshair intersects the world
-		void AimTowardsCrosshair();
+	//Start the tank moving the barrel so that a shot would hit where
+	//the crosshair intersects the world
+	void AimTowardsCrosshair();
 
 	// Return an OUT parameter, true if hit landscape 
 	bool GetSightRayHitLocation(FVector& OutHitLocation) const;
